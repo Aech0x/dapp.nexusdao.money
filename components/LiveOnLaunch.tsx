@@ -5,7 +5,7 @@ function LiveOnLaunch() {
         Coming soon!
       </span>
       <span className="text-xl sm:text-2xl mt-2 text-center">
-        This page will be live once presale is complete.
+        This page will be live soon.
       </span>
     </div>
   )
