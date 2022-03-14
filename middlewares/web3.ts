@@ -451,7 +451,7 @@ const createWeb3Middleware = (): Middleware => {
 
             if (usePresale) {
               requirements.push({
-                value: invested > tiers[tier].price,
+                value: invested >= tiers[tier].price,
                 reason: "Insufficient presale balance."
               })
 
