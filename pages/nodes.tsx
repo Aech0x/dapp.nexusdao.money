@@ -175,7 +175,7 @@ const Nodes: NextPage = () => {
   return (
     <>
       {status.global === Status.Success ? (
-        <div className="hidden md:flex flex-col">
+        <div className="flex flex-col">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <Card title="Your Nodes" value={`${nodes.length}/100`} />
 
@@ -439,14 +439,14 @@ const Nodes: NextPage = () => {
           <Spinner />
         </div>
       )}
-      <div className="flex md:hidden flex-col flex-auto justify-center mb-24">
+      {/* <div className="flex md:hidden flex-col flex-auto justify-center mb-24">
         <span className="text-2xl sm:text-4xl font-bold text-center">
           Not supported.
         </span>
         <span className="text-xl sm:text-2xl mt-2 text-center">
           This page is only available on wider screens.
         </span>
-      </div>
+      </div> */}
     </>
   )
 }
