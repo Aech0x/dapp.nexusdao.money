@@ -461,7 +461,7 @@ const createWeb3Middleware = (): Middleware => {
               shouldExecute = true
             } else {
               requirements.push({
-                value: tokenBalance > tiers[tier].price,
+                value: tokenBalance >= tiers[tier].price,
                 reason: "Insufficient NXS balance."
               })
 
