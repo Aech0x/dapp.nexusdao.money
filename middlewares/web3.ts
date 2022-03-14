@@ -447,8 +447,6 @@ const createWeb3Middleware = (): Middleware => {
             const tokenBalance: number = state.nodes.user.nxsBalance
             const invested: number = state.presale.user.invested
 
-            console.log(invested)
-
             if (usePresale) {
               requirements.push({
                 value: invested >= tiers[tier].price,
@@ -573,7 +571,6 @@ const createWeb3Middleware = (): Middleware => {
         execFunc(contractToUse, signature, params)
       }
 
-      console.log(action.type)
       return next(action)
     }
 }
