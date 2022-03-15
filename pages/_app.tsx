@@ -10,6 +10,7 @@ import Topbar from "../components/Topbar"
 import { ToastContainer } from "react-toastify"
 import { ModalContextProvider } from "../hooks/useModalContext"
 import "react-toastify/dist/ReactToastify.min.css"
+import { ThemeProvider } from "next-themes"
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -28,19 +29,21 @@ function MyApp({ Component, pageProps }: AppProps) {
       </Head>
 
       <Provider store={store}>
-        <ModalContextProvider>
-          <div className="flex">
-            <Sidebar />
-            <div className="flex flex-auto bg-gray-100">
-              <div className="w-full mx-auto max-w-4xl px-8">
-                <div className="flex flex-col min-h-screen">
-                  <Topbar />
-                  <Component {...pageProps} />
+        <ThemeProvider enableSystem={true} attribute="class">
+          <ModalContextProvider>
+            <div className="flex dark:bg-slate-900 dark:text-gray-50 transition-all duration-300">
+              <Sidebar />
+              <div className="flex flex-auto bg-gray-100 dark:bg-slate-900">
+                <div className="w-full mx-auto max-w-4xl px-8">
+                  <div className="flex flex-col min-h-screen">
+                    <Topbar />
+                    <Component {...pageProps} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </ModalContextProvider>
+          </ModalContextProvider>
+        </ThemeProvider>
       </Provider>
       <ToastContainer />
     </>

@@ -76,7 +76,7 @@ function Content() {
   const dispatch = useDispatch()
 
   return (
-    <div className="flex flex-col shrink-0 min-h-screen top-0 sticky justify-between p-8 bg-white w-72 drop-shadow-lg">
+    <div className="flex flex-col shrink-0 min-h-screen top-0 sticky justify-between p-8 bg-white dark:bg-slate-800 w-72 drop-shadow-lg">
       <div className="flex flex-col">
         <Link href="/">
           <a className="flex flex-col items-center group">
@@ -86,7 +86,7 @@ function Content() {
               width={128}
               height={128}
             />
-            <span className="text-3xl font-bold group-hover:text-blue-700">
+            <span className="text-3xl font-bold group-hover:text-blue-700 dark:group-hover:text-blue-400">
               Nexus DAO
             </span>
           </a>
@@ -106,14 +106,14 @@ function Content() {
                       className={
                         isActive
                           ? "h-6 w-6"
-                          : "h-6 w-6 group-hover:text-blue-700"
+                          : "h-6 w-6 group-hover:text-blue-700 dark:group-hover:text-blue-400"
                       }
                     />
                     <span
                       className={`text-lg font-semibold ${
                         isActive
                           ? "underline underline-offset-2"
-                          : "group-hover:text-blue-700"
+                          : "group-hover:text-blue-700 dark:group-hover:text-blue-400"
                       }`}
                     >
                       {item.title}
@@ -132,11 +132,11 @@ function Content() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <item.icon className="h-6 w-6 group-hover:text-blue-700" />
-                  <span className="text-lg font-semibold group-hover:text-blue-700">
+                  <item.icon className="h-6 w-6 group-hover:text-blue-700 dark:group-hover:text-blue-400" />
+                  <span className="text-lg font-semibold group-hover:text-blue-700 dark:group-hover:text-blue-400">
                     {item.title}
                   </span>
-                  <ExternalLinkIcon className="h-5 w-5 invisible group-hover:visible text-blue-700" />
+                  <ExternalLinkIcon className="h-5 w-5 invisible group-hover:visible text-blue-700 dark:text-blue-400" />
                 </a>
               </Link>
             )
@@ -150,7 +150,7 @@ function Content() {
               href={item.link}
               rel="noopener noreferrer"
               target="_blank"
-              className="hover:text-blue-700 w-6 h-6 flex items-center cursor-pointer"
+              className="hover:text-blue-700 dark:hover:text-blue-400 w-6 h-6 flex items-center cursor-pointer"
               title={item.title}
               key={i}
             >

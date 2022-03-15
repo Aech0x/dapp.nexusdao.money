@@ -179,11 +179,9 @@ const Nodes: NextPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <Card title="Your Nodes" value={`${nodes.length}/100`} />
 
-            <div className="flex items-center justify-center rounded-lg py-4 px-4 bg-white drop-shadow-md">
+            <div className="flex items-center justify-center rounded-lg py-4 px-4 bg-white dark:bg-slate-800 drop-shadow-md">
               <div className="flex flex-col items-center">
-                <span className="text-lg font-semibold text-gray-500">
-                  Unclaimed Rewards
-                </span>
+                <span className="cardTitle">Unclaimed Rewards</span>
                 <span className="text-2xl font-bold">
                   {totalRewards.toFixed(3)}
                 </span>
@@ -210,13 +208,11 @@ const Nodes: NextPage = () => {
               data={tiers}
             />
 
-            <div className="flex flex-col justify-center rounded-lg py-3 bg-white drop-shadow-md text-center px-4">
-              <span className="text-lg font-semibold text-gray-500 mb-2">
-                Global Actions
-              </span>
+            <div className="flex flex-col justify-center rounded-lg py-3 bg-white dark:bg-slate-800 drop-shadow-md text-center px-4">
+              <span className="cardTitle mb-2">Global Actions</span>
               <div className="flex justify-center gap-x-4">
                 <button
-                  className="bg-gray-200 hover:bg-blue-600 hover:text-white px-2 py-2 rounded-lg"
+                  className="globalActions"
                   onClick={() => {
                     if (!isStakingApproved) {
                       setModalData({
@@ -242,7 +238,7 @@ const Nodes: NextPage = () => {
                 <button
                   type="button"
                   data-tooltip-target="unstake-tooltip"
-                  className="bg-gray-200 hover:bg-blue-600 hover:text-white px-2 py-2 rounded-lg"
+                  className="globalActions"
                   onClick={() => {
                     dispatch({ type: "nodes/unstakeAll" })
                   }}
@@ -251,7 +247,7 @@ const Nodes: NextPage = () => {
                 </button>
 
                 <button
-                  className="bg-gray-200 hover:bg-blue-600 hover:text-white px-2 py-2 rounded-lg"
+                  className="globalActions"
                   onClick={() => {
                     if (isBlacklisted) {
                       notifyError("Blacklisted address.")
@@ -347,7 +343,7 @@ const Nodes: NextPage = () => {
                     <div className="flex items-center justify-center gap-x-2">
                       <Tooltip tooltipText="edit name">
                         <button
-                          className="py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
+                          className="tableActions"
                           onClick={() => {
                             setModalData({
                               title: "Rename Token",
@@ -376,7 +372,7 @@ const Nodes: NextPage = () => {
 
                       {/* <Tooltip tooltipText="upgrade tier">
                         <button
-                          className="py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
+                          className="tableActions"
                           onClick={() => {
                             dispatch({
                               type: "nodes/upgradeToken",
@@ -392,7 +388,7 @@ const Nodes: NextPage = () => {
                         tooltipText={node.isStaked ? "unstake" : "stake"}
                       >
                         <button
-                          className="py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
+                          className="tableActions"
                           onClick={() => {
                             if (node.isStaked)
                               dispatch({
@@ -416,7 +412,7 @@ const Nodes: NextPage = () => {
 
                       <Tooltip tooltipText="claim">
                         <button
-                          className="py-1 px-2 bg-gray-200 hover:bg-gray-300 rounded-lg"
+                          className="tableActions"
                           onClick={() => {
                             dispatch({
                               type: "nodes/claimByTokenId",

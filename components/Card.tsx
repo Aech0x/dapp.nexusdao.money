@@ -5,10 +5,10 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, value, children }) => {
   return (
-    <div className="flex flex-col justify-center rounded-lg py-4 bg-white drop-shadow-md items-center">
-      <span className="text-lg font-semibold text-gray-500">{title}</span>
+    <div className="flex flex-col justify-center rounded-lg py-4 bg-white dark:bg-slate-800 drop-shadow-md items-center">
+      <span className="cardTitle">{title}</span>
       {value != null ? (
-        <span className="text-2xl font-bold">{value}</span>
+        <span className="text-2xl font-bold dark:text-white">{value}</span>
       ) : (
         children
       )}

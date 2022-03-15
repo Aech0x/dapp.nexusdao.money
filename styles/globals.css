@@ -2,12 +2,30 @@
 @tailwind components;
 @tailwind utilities;
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+@layer base {
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
-input[type="number"] {
-  -moz-appearance: textfield;
+@layer components {
+  .cardTitle {
+    @apply text-lg font-semibold text-gray-500 dark:text-gray-400;
+  }
+  .globalActions {
+    @apply bg-gray-200 dark:bg-slate-700 hover:bg-blue-600 dark:hover:bg-blue-600 hover:text-white dark:hover:text-white px-2 py-2 rounded-lg;
+  }
+  .tableActions {
+    @apply py-1 px-2 bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 rounded-lg;
+  }
 }

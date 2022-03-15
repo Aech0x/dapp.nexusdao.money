@@ -12,18 +12,21 @@ function Table({ columns, data }: { columns: any; data: any }) {
     /* the jsx key is provided in the .get*Props() spreads */
   }
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col ">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-          <div className="drop-shadow-md overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <table className="min-w-full divide-y divide-gray-200">
-              <thead className="bg-gray-50" {...getTableProps()}>
+          <div className="drop-shadow-md overflow-hidden border-b border-gray-200 dark:border-gray-600 sm:rounded-lg">
+            <table className="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
+              <thead
+                className="bg-gray-50 dark:bg-slate-700"
+                {...getTableProps()}
+              >
                 {headerGroups.map((headerGroup) => (
                   <tr {...headerGroup.getHeaderGroupProps()}>
                     {headerGroup.headers.map((column) => (
                       <th
                         scope="col"
-                        className="px-6 py-3 text-xs text-center font-medium uppercase text-gray-500 tracking-wider"
+                        className="px-6 py-3 text-xs text-center font-medium uppercase text-gray-500 dark:text-gray-400 tracking-wider"
                         {...column.getHeaderProps()}
                       >
                         {column.render("Header")}
@@ -34,7 +37,7 @@ function Table({ columns, data }: { columns: any; data: any }) {
                 <tr></tr>
               </thead>
               <tbody
-                className="bg-white divide-y divide-gray-200"
+                className="bg-white dark:bg-slate-800 divide-y divide-gray-200 dark:divide-gray-600"
                 {...getTableBodyProps()}
               >
                 {rows.map((row) => {

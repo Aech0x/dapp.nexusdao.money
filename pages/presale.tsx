@@ -133,11 +133,9 @@ const Presale: NextPage = () => {
           )} */}
 
           {connected && isValidNetwork ? (
-            <div className="flex items-center justify-center rounded-lg py-4 px-4 bg-white drop-shadow-md">
+            <div className="flex items-center justify-center rounded-lg py-4 px-4 bg-white dark:bg-slate-800 drop-shadow-md">
               <div className="flex flex-col items-center">
-                <span className="text-lg font-semibold text-gray-500">
-                  Your Presale Balance
-                </span>
+                <span className="cardTitle">Your Presale Balance</span>
                 <span className="text-2xl font-bold">
                   {invested.toFixed(2)}
                 </span>
